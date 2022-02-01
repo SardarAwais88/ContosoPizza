@@ -37,4 +37,10 @@ namespace ContosoPizza.Controllers
     {
         // This code will save the pizza and return a result
     }
+
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, Pizza pizza)
+    {
+        // This code will update the pizza and return a result
+    }
 }
