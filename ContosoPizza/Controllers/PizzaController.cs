@@ -37,14 +37,7 @@ namespace ContosoPizza.Controllers
     {
         // This code will save the pizza and return a result
     }
-
-    [HttpPut("{id}")]
-    public IActionResult Update(int id, Pizza pizza)
-    {
-        // This code will update the pizza and return a result
-    }
-
-    /*
+/*
      Each ActionResult used in the preceding action is mapped to the corresponding HTTP status code in the following table.
 
     PUT
@@ -54,7 +47,23 @@ namespace ContosoPizza.Controllers
     BadRequest	400	The request body's Id value doesn't match the route's id value.
     BadRequest is implied	400	The request body's Pizza object is invalid.
      */
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, Pizza pizza)
+    {
+        // This code will update the pizza and return a result
+    }
 
+
+    /*
+     Each ActionResult used in the preceding action is mapped to the corresponding HTTP status code in the following table.
+
+    DELETE
+    ASP.NET Core
+    action result	HTTP status code	Description
+    NoContent	204	The pizza was deleted from the in-memory cache.
+    NotFound	404	A pizza matching the provided id parameter doesn't exist in the in-memory.
+    The following sections demonstrate how to support each of these four actions in the web API.
+     */
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
