@@ -36,7 +36,7 @@ namespace ContosoPizza.Controllers
     public IActionResult Create(Pizza pizza)
     {
         PizzaService.Add(pizza);
-        //return CreatedAtActionResult(nameof(Create), new { id = pizza.Id }, pizza);
+        
         return CreatedAtActionResult(nameof(pizza), new { id = pizza.Id }, pizza);
 
     }
