@@ -54,4 +54,10 @@ namespace ContosoPizza.Controllers
     BadRequest	400	The request body's Id value doesn't match the route's id value.
     BadRequest is implied	400	The request body's Pizza object is invalid.
      */
+
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id)
+    {
+        // This code will delete the pizza and return a result
+    }
 }
