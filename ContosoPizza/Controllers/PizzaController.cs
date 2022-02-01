@@ -35,18 +35,24 @@ namespace ContosoPizza.Controllers
     [HttpPost]
     public IActionResult Create(Pizza pizza)
     {
-        // This code will save the pizza and return a result
-    }
-/*
-     Each ActionResult used in the preceding action is mapped to the corresponding HTTP status code in the following table.
+        PizzaService.Add(pizza);
+        //return CreatedAtActionResult(nameof(Create), new { id = pizza.Id }, pizza);
+        return CreatedAtActionResult(nameof(pizza), new { id = pizza.Id }, pizza);
 
-    PUT
-    ASP.NET Core
-    action result	HTTP status code	Description
-    NoContent	204	The pizza was updated in the in-memory cache.
-    BadRequest	400	The request body's Id value doesn't match the route's id value.
-    BadRequest is implied	400	The request body's Pizza object is invalid.
-     */
+    }
+
+
+
+    /*
+    Each ActionResult used in the preceding action is mapped to the corresponding HTTP status code in the following table.
+
+   PUT
+   ASP.NET Core
+   action result	HTTP status code	Description
+   NoContent	204	The pizza was updated in the in-memory cache.
+   BadRequest	400	The request body's Id value doesn't match the route's id value.
+   BadRequest is implied	400	The request body's Pizza object is invalid.
+    */
     [HttpPut("{id}")]
     public IActionResult Update(int id, Pizza pizza)
     {
