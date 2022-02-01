@@ -17,7 +17,7 @@ namespace ContosoPizza.Services
 
         public static List<Pizza> GetAll() => Pizzas;
 
-        public static Pizza? Get(int id) => Pizzas.FirstOrDefault(p => p.Id == id);
+        public static Pizza? Getbyid(int id) => Pizzas.FirstOrDefault(p => p.Id == id);
 
         public static void Add(Pizza pizza)
         {
@@ -27,7 +27,7 @@ namespace ContosoPizza.Services
 
         public static void Delete(int id)
         {
-            var pizza = Get(id);
+            var pizza = Getbyid(id);
             if (pizza is null)
                 return;
 

@@ -20,15 +20,17 @@ namespace ContosoPizza.Controllers
     // now another step is to get pizza service by id
 
     //get single pizza using get by id
-
+/*
     [HttpGet("{id}")]
     public ActionResult<Pizza> Getbyid(int id)
     {
         var pizza = PizzaService.Getbyid(id);
 
         if (pizza == null)
-            return NotFound();
+            return NotFoundResult();
 
         return pizza;
-    }
+    }*/
+
+
 }
