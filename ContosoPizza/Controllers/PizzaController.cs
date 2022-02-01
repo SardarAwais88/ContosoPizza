@@ -56,7 +56,16 @@ namespace ContosoPizza.Controllers
     [HttpPut("{id}")]
     public IActionResult Update(int id, Pizza pizza)
     {
-        // This code will update the pizza and return a result
+        if (id != pizza.Id)
+            return BadRequest();
+
+        var existingPizza = PizzaService.Get(id);
+        if (existingPizza is null)
+            return NotFound();
+
+        PizzaService.Update(pizza);
+
+        return NoContent();
     }
 
 
